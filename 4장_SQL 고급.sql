@@ -221,7 +221,7 @@ select a.seq, a.uid, sale, name, pos from sales as a
 join member as b on a.uid = b.uid
 where sale >= 100000;
 
-SELECT a.seq, a.uid, b.name, b.pos, year, SUM(sale) AS 합계 FROM Sales AS a
+SELECT b.uid,  a.year, SUM(sale) AS 합계 FROM Sales AS a
 JOIN Member AS b ON a.uid = b.uid
 GROUP BY a.uid, a.year HAVING 합계 >= 100000
 ORDER BY a.year ASC, 합계 DESC;
